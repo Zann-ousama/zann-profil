@@ -1,35 +1,104 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ucapan Idul Fitri 1447H - Variasi 3</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <section class="scene">
-    <img class="top-ornament" src="assets/ornament.png" alt="Ornamen atas" />
-    <img class="top-lantern top-lantern-left" src="assets/lentera1.png" alt="Lentera kiri" />
-    <img class="top-lantern top-lantern-right" src="assets/lentera1.png" alt="Lentera kanan" />
-    <img class="bedug" src="assets/bedug.png" alt="Bedug" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Startup</title>
 
-    <div class="panel">
-      <span class="headline">Eid Mubarak</span>
-      <h1>Selamat Hari Raya Idul Fitri 1447 H / 2026 M</h1>
-      <p>Mohon Maaf Lahir dan Batin</p>
-      <div class="photo-frame">
-        <img src="assets/alhamdulillah.jpg" alt="alhamdulillah" />
-      </div>
-    </div>
-   
-  </section>
-  <footer style="text-align: center; color: white; padding: 16px 0;">
-     <a href="profil/index.html" target="_blank">
-  <button>Buka Website karya zann-ousama</button>
-</a> <br>
-    Caritahub | Tulungagung Dev | Patria Dev</footer>
+<link rel="icon" type="image/png" href="../../../../Downloads/images.png">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#portfolio">Karya</a>
+</nav>
+
+<section class="hero" id="home">
+
+    <img src="chiken_2_p2-768x768.jpg" width="40%" alt="ayam">
+<h1>Halo, Saya zann-ousama 🚀</h1>
+<p>Cuma copas dari ai</p>
+<a href="#portfolio" class="btn">Lihat Karya</a>
+</section>
+
+<section class="portfolio" id="portfolio">
+<h2>Karya Saya</h2>
+
+<div class="filter-buttons">
+<button onclick="filterProject('all')">Semua</button>
+<button onclick="filterProject('web')">Karya 1</button>
+<button onclick="filterProject('game')">karya 2</button>
+<button onclick="filterProject('design')">Karya 3</button>
+</div>
+
+<div class="project-grid">
+
+<div class="project-card web">
+<img src="download (10).jpg">
+<h3>Karya 1</h3>
+<p>Web pertama yang ku buat.</p>
+<a href="/html_basic_01/index1.html" class="demo-btn" target="_blank">Demo Live</a>
+</div>
+
+<div class="project-card game">
+<img src="chiken_2_p2-768x768.jpg">
+<h3>Karya 2</h3>
+<p>Pertama kali mencoba coding game</p>
+<a href="/html_basic_02/game.html" class="demo-btn">Demo Live</a>
+</div>
+
+<div class="project-card design">
+<img src="[500] avatar 𓂃꙳⋆.jpg">
+<h3>Karya 3</h3>
+<p>Web kedua yang saya buat</p>
+<a href="/html_basic_02/index2.html" class="demo-btn" target="_blank">Demo Live</a>
+</div>
+
+<div class="project-card design">
+<img src="[500] avatar 𓂃꙳⋆.jpg">
+<h3>Karya 4</h3>
+<p>Web ketiga yang saya buat</p>
+<a href=" https://zann-ousama.github.io/joglojanur-zann/" class="demo-btn" target="_blank">Demo Live</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+Coding dari chatgpt
+</footer>
+
+<script>
+
+/* 🎬 Scroll Animation */
+const cards = document.querySelectorAll('.project-card');
+
+window.addEventListener('scroll', () => {
+cards.forEach(card => {
+const rect = card.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+card.classList.add('show');
+}
+});
+});
+
+/* 🖼 Filter */
+function filterProject(category){
+const projects = document.querySelectorAll('.project-card');
+
+projects.forEach(project=>{
+project.style.display='none';
+if(category === 'all' || project.classList.contains(category)){
+project.style.display='block';
+}
+});
+}
+
+</script>
+
 </body>
 </html>
